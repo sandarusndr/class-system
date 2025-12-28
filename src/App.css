@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+:root{
+--bg: #f5f7fb;
+--card: #ffffff;
+--accent: #5b6ff7;
+--muted: #6b7280;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;background:var(--bg);color:#111}
+.app-shell{display:flex;min-height:100vh}
+.sidebar{width:220px;background:linear-gradient(180deg,#1f2937,#374151);color:white;padding:20px}
+.brand{margin:0 0 20px;font-size:20px}
+.sidebar nav ul{list-style:none;padding:0;margin:0}
+.sidebar nav ul li{margin:10px 0}
+.sidebar nav a{color:#e6edf9;text-decoration:none}
+.main{flex:1;padding:28px}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.classes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
+.class-card{padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid #eef2ff}
+.zoom-link{display:inline-block;margin:8px 0;padding:6px 10px;border-radius:8px;background:var(--accent);color:white;text-decoration:none}
+.homework ol{margin:6px 0 0;padding-left:18px}
+.attendance-grid{display:flex;gap:12px;margin-top:12px}
+.att-day{flex:1;padding:12px;border-radius:10px;text-align:center;cursor:pointer;border:1px solid #e6eefb}
+.att-day.present{background:linear-gradient(90deg,#e6fff4,#ddf8ee);border-color:#a7f3d0}
+.att-day.absent{background:linear-gradient(90deg,#fff5f5,#fff2f2);border-color:#fecaca}
+.last-att{margin-top:18px}
+.history-list{display:flex;gap:10px;overflow:auto}
+.history-card{min-width:180px;padding:8px;border-radius:8px;background:#fbfbff;border:1px solid #eef2ff}
+.pay-panel{display:flex;gap:24px;align-items:flex-start}
+.amount{font-size:24px;margin:8px 0}
+.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.recent-payments ul{list-style:none;padding-left:0}
+.chart-row{display:flex;gap:20px;margin-top:12px}
+.chart-card{flex:2;padding:10px;background:#fff;border-radius:10px}
+.chart-card.small{flex:1}
+.summary{margin-top:12px}
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.contact-card{padding:12px;border-radius:10px;background:#fff}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* responsive */
+@media (max-width:800px){
+.app-shell{flex-direction:column}
+.sidebar{width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-between}
+.main{padding:12px}
+.attendance-grid{flex-direction:column}
+.chart-row{flex-direction:column}
 }
